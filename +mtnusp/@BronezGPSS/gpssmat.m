@@ -66,7 +66,7 @@ function R = gpssmat(fc, fw, t)
 
     % deal with MATLAB numerical issue
     % --------------------------------
-    R(R < 1e-10) = 0;
+    R(abs(R) < 1e-10) = 0;
 
 end % function gpssmat
 
