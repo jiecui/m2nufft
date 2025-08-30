@@ -15,8 +15,8 @@ function R = gpssmat(fc, fw, t)
     %
     % See also .
 
-    % Richard J. Cui. Created: Tue 12/12/2023  5:46:36.143 PM
-    % $Revision: 0.2 $  $Date: Fri 12/22/2023 10:09:51.109 AM $
+    % 2023-2025 Richard J. Cui. Created: Tue 12/12/2023  5:46:36.143 PM
+    % $Revision: 0.3 $  $Date: Sat 08/30/2025 11:36:42.007 AM $
     %
     % Mayo Clinic Foundation
     % Rochester, MN 55901, USA
@@ -64,6 +64,10 @@ function R = gpssmat(fc, fw, t)
 
     end % function gpssmat
 
-    % R = real(R);
+    % deal with MATLAB numerical issue
+    % --------------------------------
+    R(R < 1e-10) = 0;
 
-    % [EOF]
+end % function gpssmat
+
+% [EOF]
