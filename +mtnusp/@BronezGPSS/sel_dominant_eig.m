@@ -101,6 +101,9 @@ function domin_ev = sel_dominant_eig(this, options)
                 [lambda_k, V_k, fw_k] = leakage_domi_eigs(this, t, fc_k, fw_k, RB, l_factor);
         end % switch
 
+        % deal with MATLAB numerical issue
+        lambda_k(abs(lambda_k) > 1) = 1;
+
         % save eigenvectors and eigenvalues
         domin_ev(k).CenterFrequency = fc_k;
         domin_ev(k).BandHalfWidth = fw_k;
@@ -147,7 +150,8 @@ function [d_lambda, d_V, d_fw] = adaptive_domi_eigs(this, t, fc, fw0, max_fw, dt
         [V_k, D_k] = eig(RA_k, RB);
 
         % sort eigenvalues in descending order
-        [lambda_k, idx_k] = sort(diag(D_k), 'descend');
+        abs_diag_D_k = abs(diag(D_k));
+        [lambda_k, idx_k] = sort(abs_diag_D_k, 'descend');
         V_k = V_k(:, idx_k);
 
         % adaptive selection
@@ -179,7 +183,6 @@ function [d_lambda, d_V, d_fw] = adaptive_domi_eigs(this, t, fc, fw0, max_fw, dt
         V = V_k(:, 1:K_j);
         % normalize eigenvectors
         d_V = normalize_eigenvectors(V, RB, d_fw);
-
     else
         d_fw = [];
         d_lambda = [];
@@ -207,7 +210,8 @@ function [d_lambda, d_V, fw] = leakage_domi_eigs(this, t, fc, fw, RB, l_factor)
     [V, D] = eig(RA, RB);
 
     % sort eigenvalues in descending order
-    [lambda, idx] = sort(diag(D), 'descend');
+    abs_diag_D = abs(D);
+    [lambda, idx] = sort(abs_diag_D, 'descend');
     V = V(:, idx);
 
     % find dominant eigenvalues and eigenvectors
@@ -236,7 +240,8 @@ function [d_lambda, d_V, fw] = auto_domi_eigs(this, t, fc, fw, RB, l_factor)
     [V, D] = eig(RA, RB);
 
     % sort eigenvalues in descending order
-    [lambda, idx] = sort(diag(D), 'descend');
+    abs_diag_D = abs(diag(D));
+    [lambda, idx] = sort(abs_diag_D, 'descend');
     V = V(:, idx);
 
     % find dominant eigenvalues and eigenvectors
