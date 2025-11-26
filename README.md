@@ -1,5 +1,9 @@
 # Multiband-Multitaper Nonuniform Fast Fourier Transform (M<sup>2</sup>NuFFT)
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]([LICENSE](./LICENSE))
+![GitHub](https://img.shields.io/github/license/jiecui/m2nufft>)
+
+
 > A computationally efficient suboptimal power spectrum estimator for fast exploration of nonuniformly sampled time series
 
 ## Introduction
@@ -10,7 +14,7 @@ This is the code for the paper pre-print [(Cui 2024)](https://arxiv.org/abs/2407
 
 1. Download and install [Chronux](https://github.com/jiecui/chronux) computational toolbox. Please use this fork of `Chronux` as some of the original codes need to be modified for compatibility.
 
-1. Download and install [M<sup>2</sup>NuFFT](https://github.com/jiecui/mtnufft) package.
+1. Download and install [M<sup>2</sup>NuFFT](https://github.com/jiecui/m2nufft) package.
 
 ## Build and Test
 
