@@ -2,21 +2,17 @@
 
 # Multiband-Multitaper Nonuniform Fast Fourier Transform (M<sup>2</sup>NuFFT)
 
-[![arXiv](https://img.shields.io/static/v1?label=M%C2%B2NuFFT&message=2407.01943&color=B31B1B&logo=arXiv)](https://arxiv.org/abs/2407.01943)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![arXiv](https://img.shields.io/static/v1?label=M%C2%B2NuFFT&message=2407.01943&color=B31B1B&logo=arXiv)](https://arxiv.org/abs/2407.01943) [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 </div>
 
 ## Introduction
 
-__M<sup>2</sup>NuFFT__ is a computationally efficient suboptimal power
-spectrum estimator for fast exploration of nonuniformly sampled time series.
-This is the code repository for the paper pre-print [(Cui
-2024)](https://arxiv.org/abs/2407.01943).
+__M<sup>2</sup>NuFFT__ is a computationally efficient suboptimal power spectrum estimator for fast exploration of nonuniformly sampled time series.  This is the code repository for the paper pre-print [(Cui 2024)](https://arxiv.org/abs/2407.01943).
 
 ## Getting Started
 
-1. Download and install [Chronux](https://github.com/jiecui/chronux) computational toolbox. Please use this fork of `Chronux` as some of the original codes need to be modified for compatibility.
+1. Download and install [Chronux](https://github.com/jiecui/chronux) computational toolbox. Please use [this fork](https://github.com/jiecui/chronux) of `Chronux` as some of the original codes need to be modified for compatibility.
 
 1. Download and install [M<sup>2</sup>NuFFT](https://github.com/jiecui/m2nufft) package.
 
