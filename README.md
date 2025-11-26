@@ -1,8 +1,6 @@
 # Multiband-Multitaper Nonuniform Fast Fourier Transform (M<sup>2</sup>NuFFT)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]([LICENSE](./LICENSE))
-![GitHub](https://img.shields.io/github/license/jiecui/m2nufft>)
-
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 > A computationally efficient suboptimal power spectrum estimator for fast exploration of nonuniformly sampled time series
 
@@ -20,7 +18,7 @@ This is the code for the paper pre-print [(Cui 2024)](https://arxiv.org/abs/2407
 
 1. Error analysis of MTNUFFT method
 
-   ```mtnufft_error_analysis.m ```
+   ```mtnufft_error_analysis.m```
 
 1. Speed analysis of MTNUFFT method
 
