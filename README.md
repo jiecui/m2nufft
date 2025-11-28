@@ -12,6 +12,12 @@
 
 __M<sup>2</sup>NuFFT__ is a computationally efficient suboptimal power spectrum estimator for fast exploration of nonuniformly sampled time series.  This is the code repository for the paper pre-print [(Cui 2024)](https://arxiv.org/abs/2407.01943).
 
+* Introduces M<sup>2</sup>NuFFT for fast spectrum estimation of nonuniform time series.
+* Reduces complexity from $\mathcal{O}(N^4)$ to $\mathcal{O}(N \log N + N \log(1/\varepsilon))$ using multiband-multitaper approach.
+* Bias and variance bounds match optimal Bronez GPSS; suboptimality quantified.
+* Achieves 2–3 orders faster computation than GPSS with competitive accuracy.
+* Extends Thomson _F_-test for periodicity detection in nonuniformly sampled data.
+
 ## Getting Started
 
 1. Download and install [Chronux](https://github.com/jiecui/chronux) computational toolbox. Please use [this fork](https://github.com/jiecui/chronux) of `Chronux` as some of the original codes need to be modified for compatibility.
