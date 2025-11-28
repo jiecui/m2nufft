@@ -4,6 +4,8 @@
 
 [![arXiv](https://img.shields.io/static/v1?label=M%C2%B2NuFFT&message=2407.01943&color=B31B1B&logo=arXiv)](https://arxiv.org/abs/2407.01943) [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
+![Graphical Abstract](./images/graphic_abstract_v1.png)
+
 </div>
 
 ## Introduction
