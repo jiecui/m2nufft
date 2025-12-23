@@ -3,8 +3,8 @@
 
 cff-version: 1.2.0
 title: >-
-  A fast multitaper power spectrum estimation in
-  nonuniformly sampled time series
+  M2NuFFT - A Computationally Efficient Suboptimal power Spectrum Estimator
+  for Nonuniformly Sampled Time Series
 message: >-
   If you use this software, please cite it using the
   metadata from this file.
@@ -33,32 +33,29 @@ identifiers:
     description: arXiv
 repository-code: 'https://github.com/jiecui/mtnufft'
 abstract: >-
-  Nonuniformly sampled signals are prevalent in real-world
-  applications but pose a significant challenge when
-  estimating their power spectra from a finite number of
-  samples of a single realization. The optimal solution
-  using Bronez Generalized Prolate Spheroidal Sequence
-  (GPSS) is computationally intensive and thus impractical
-  for large datasets. This paper presents a fast
-  nonparametric method, MultiTaper NonUniform Fast Fourier
-  Transform (MTNUFFT), capable of estimating power spectra
-  with lower computational burden. The method first derives
-  a set of optimal tapers via cubic spline interpolation on
-  a nominal analysis band, and subsequently shifts these
-  tapers to other analysis bands using NonUniform FFT
-  (NUFFT). The estimated spectral power within the band is
-  the average power at the outputs of the taper set. This
-  algorithm eliminates the time-consuming computation for
-  solving the Generalized Eigenvalue Problem (GEP), thus
-  reducing the computational load from O(N4) to
-  O(NlogN+Nlog(1/ϵ)), comparable with the NUFFT. The
-  statistical properties of the estimator are assessed using
-  Bronez GPSS theory, revealing that the bias and variance
-  bound of the MTNUFFT estimator are identical to those of
-  the optimal estimator. Furthermore, the degradation of
-  bias bound can serve as a measure of the deviation from
-  optimality. The performance of the estimator is evaluated
-  using both simulation and real-world data, demonstrating
-  its practical applicability. The code of the proposed fast
-  algorithm is available on GitHub
-  (https://github.com/jiecui/mtnufft).
+  Nonuniformly sampled signals are prevalent in real-world applications.
+  However, estimating their power spectra from finite samples poses a
+  significant challenge. The optimal solution—Bronez Generalized Prolate
+  Spheroidal Sequence (GPSS) by solving the associated Generalized
+  Eigenvalue Problem (GEP)—is computationally intensive and thus impractical
+  for large datasets. This paper describes a fast, nonparametric method:
+  Multiband-Multitaper Nonuniform Fast Fourier Transform (M2NuFFT), which
+  substantially reduces computational burden while maintaining statistical
+  efficiency. The algorithm partitions the signal frequency band into
+  multiple sub-bands. Within each sub-band, optimal tapers are computed at a
+  nominal analysis band and shifted to other analysis bands using the
+  Nonuniform Fast Fourier Transform (NuFFT), avoiding repeated GEP
+  computations. Spectral power within the analysis band is then estimated as
+  the average power across the taper outputs. For the special case where the
+  nominal band is centered at zero frequency, tapers can be approximated via
+  cubic spline interpolation of Discrete Prolate Spheroidal Sequence (DPSS),
+  eliminating GEP computation entirely. This reduces the complexity from
+  O(N4) to O(NlogN+Nlog(1/ϵ)). Statistical properties of the estimator,
+  assessed using Bronez GPSS theory, reveal that the bias and variance bound
+  of the M2NuFFT estimator are identical to those of the optimal estimator.
+  Additionally, the degradation of bias bound indicates deviation from
+  optimality. Finally, we propose an extension of Thomson F-test to test
+  periodicity in nonuniform samples. The estimator’s performance is
+  validated through simulation and real-world data, demonstrating its
+  practical applicability. The MATLAB code of the fast algorithm is
+  available on GitHub (https://github.com/jiecui/mtnufft).
